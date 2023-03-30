@@ -31,10 +31,10 @@ struct DList
     {
     }
 
-    public:
+    private:
 
     template< typename... Args >
-    void emplace (Args&&... args)
+    void emplace (Node<T>* prevNode, Args&&... args)
     {
         Node<T> node { std::forward< Args > ( args )... };
     }
