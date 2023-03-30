@@ -2,6 +2,7 @@
 
 #include <utility>
 #include <cstddef>
+#include <stdexcept>
 
 template< typename T >
 struct Node
@@ -43,11 +44,11 @@ struct DList
         size++;
 
         if ( prevNode )
-            emplace_ ( *prevNode, *node );
-        else
-            first = node;
+            addBetween ( *prevNode, *node );
+        else if (size > 0)
+            throw std::runtime_error ( "DList::emplace() called with empty list" );
     }
-    void emplace_ ( auto& prevNode, auto& node )
+    void addBetween ( auto& prevNode, auto& node )
     {
         if(prevNode.next ) {
             prevNode.next->last = &node;
