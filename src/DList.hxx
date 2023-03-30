@@ -22,3 +22,6 @@ struct DList
     }
 
 }; //
+
+Node<T> a
+a.last == ?
