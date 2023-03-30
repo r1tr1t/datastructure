@@ -10,3 +10,15 @@ int main ()
 
     return 0;
 }
+
+//
+
+void a();
+void b();
+
+void a() {
+    b();
+}
+void b() {
+
+}
