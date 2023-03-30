@@ -36,6 +36,7 @@ struct DList
     template< typename... Args >
     void emplace (Args&&... args)
     {
+        Node<T> node { std::forward< Args > ( args )... };
     }
 
 }; //
