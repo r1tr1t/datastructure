@@ -49,6 +49,8 @@ struct DList
             prevNode.next->last = &node;
 
         node.last = &prevNode;
+
+        prevNode.next = &node;
     }
 
 }; //
