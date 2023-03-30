@@ -1,6 +1,7 @@
 #pragma once
 
 #include <utility>
+#include <cstddef>
 
 template< typename T >
 struct Node
@@ -24,6 +25,8 @@ struct DList
 
     Node< T >* first {};
     Node< T >* last {};
+
+    size_t size {};
 
     public:
 
