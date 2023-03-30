@@ -13,12 +13,16 @@ int main ()
 
 //
 
+// declare function a
 void a();
+// declare function b
 void b();
 
+// define function a
 void a() {
     b();
 }
+// define function b
 void b() {
 
 }
