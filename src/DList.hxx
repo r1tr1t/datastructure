@@ -2,7 +2,7 @@
 
 template<typename T>
 struct Node {
-    Node* last;
+    Node* last {};
     Node* next {};
 
     T data {};
@@ -22,6 +22,3 @@ struct DList
     }
 
 }; //
-
-Node<T> a
-a.last == ?
