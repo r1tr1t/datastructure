@@ -34,14 +34,17 @@ struct DList
     private:
 
     template< typename... Args >
-    void emplace (Node<T>* prevNode, Args&&... args)
+    void emplace ( Node< T >* prevNode, Args&&... args )
     {
-        auto* node = new Node<T> { std::forward< Args > ( args )... };
+        auto* node = new Node< T > { std::forward< Args > ( args )... };
 
-        if (prevNode)
-            first = node; // more complex, separate function
+        if ( prevNode )
+            emplace_ ( node );
         else
             first = node;
+    }
+    void emplace_ ( auto* node )
+    {
     }
 
 }; //
