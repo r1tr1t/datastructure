@@ -39,9 +39,9 @@ struct DList
         auto* node = new Node<T> { std::forward< Args > ( args )... };
 
         if (prevNode)
-        first = node; // more complex, separate function
+            first = node; // more complex, separate function
         else
-        first = node;
+            first = node;
     }
 
 }; //
