@@ -39,12 +39,16 @@ struct DList
         auto* node = new Node< T > { std::forward< Args > ( args )... };
 
         if ( prevNode )
-            emplace_ ( node );
+            emplace_ ( *prevNode, *node );
         else
             first = node;
     }
-    void emplace_ ( auto* node )
+    void emplace_ ( auto& prevNode, auto& node )
     {
+        if(prevNode.next )
+            prevNode.next->last = &node;
+
+        node.last = &prevNode;
     }
 
 }; //
