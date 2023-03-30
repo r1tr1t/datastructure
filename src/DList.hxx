@@ -41,12 +41,13 @@ struct DList
     void emplace ( Node< T >* prevNode, Args&&... args )
     {
         auto* node = new Node< T > { std::forward< Args > ( args )... };
-        size++;
 
         if ( prevNode )
             addBetween ( *prevNode, *node );
         else if (size > 0)
             throw std::runtime_error ( "DList::emplace() called with empty list" );
+
+        size++;
     }
     void addBetween ( auto& prevNode, auto& node )
     {
