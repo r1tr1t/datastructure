@@ -40,6 +40,7 @@ struct DList
     void emplace ( Node< T >* prevNode, Args&&... args )
     {
         auto* node = new Node< T > { std::forward< Args > ( args )... };
+        size++;
 
         if ( prevNode )
             emplace_ ( *prevNode, *node );
