@@ -1,24 +1,41 @@
 #pragma once
 
-template<typename T>
-struct Node {
+#include <utility>
+
+template< typename T >
+struct Node
+{
     Node* last {};
     Node* next {};
 
-    T data {};
+    T data;
+
+    template< typename... Args >
+    Node ( Args&&... args )
+        : data ( std::forward< Args > ( args )... )
+    {
+    }
 };
 
-template< typename T>
+template< typename T >
 struct DList
 {
     public:
 
-    Node<T>* first {};
-    Node<T>* last {};
+    Node< T >* first {};
+    Node< T >* last {};
 
     public:
 
-    DList () {
+    DList ()
+    {
+    }
+
+    public:
+
+    template< typename... Args >
+    void emplace (Args&&... args)
+    {
     }
 
 }; //
