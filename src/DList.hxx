@@ -45,8 +45,11 @@ struct DList
     }
     void emplace_ ( auto& prevNode, auto& node )
     {
-        if(prevNode.next )
+        if(prevNode.next ) {
             prevNode.next->last = &node;
+
+            node.next = prevNode.next;
+        }
 
         node.last = &prevNode;
 
