@@ -9,7 +9,7 @@ struct Node {
 };
 
 template< typename T>
-class DList
+struct DList
 {
     public:
 
