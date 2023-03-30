@@ -4,6 +4,7 @@ class DList
 {
     public:
 
-    DList () = default;
+    DList () {
+    }
 
 }; //
